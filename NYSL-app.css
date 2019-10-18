@@ -18,6 +18,47 @@
     text-shadow: 2px 2px 4px whitesmoke;
 }
 
+.gameDay {
+    display: flex;
+    justify-content: center;
+    text-shadow: 2px 2px 4px whitesmoke;
+}
+
+#AM-game {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10%;
+}
+
+.vs {
+    text-shadow: 2px 2px 4px whitesmoke;
+
+}
+
+#PM-game {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10%;
+}
+
+.date {
+    display: flex;
+    justify-content: center;
+    text-shadow: 2px 2px 4px whitesmoke;
+}
+
+.time {
+    display: flex;
+    justify-content: center;
+    text-shadow: 2px 2px 4px whitesmoke;
+}
+
+#late-game {
+    margin-top: 20%;
+}
+
 .events {
     display: flex;
     align-items: center;
@@ -47,8 +88,23 @@ div.btn-container a {
     opacity: 0.5;
 }
 
+#upcoming-game {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 20%;
+    margin-left: 25%;
+    text-shadow: 2px 2px 4px whitesmoke;
+
+}
+
 .about {
     opacity: 1;
     text-shadow: 1px 1px 3px whitesmoke;
     color: black;
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
 }
