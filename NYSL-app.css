@@ -14,7 +14,7 @@
 .title {
     display: flex;
     justify-content: center;
-    padding: 5%;
+    padding: 4.3%;
     text-shadow: 2px 2px 4px whitesmoke;
 }
 
@@ -28,12 +28,21 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 10%;
+    margin-top: 5%;
+    text-shadow: 2px 2px 4px whitesmoke;
 }
 
 .vs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-shadow: 2px 2px 4px whitesmoke;
+}
 
+.field {
+    text-shadow: 2px 2px 4px whitesmoke;
+    display: flex;
+    justify-content: center;
 }
 
 #PM-game {
@@ -41,6 +50,7 @@
     flex-direction: row;
     justify-content: space-around;
     margin-top: 10%;
+    text-shadow: 2px 2px 4px whitesmoke;
 }
 
 .date {
@@ -82,10 +92,24 @@ div.btn-container a {
 
 .home-btn {
     display: flex;
-    margin-left: 40%;
-    height: 20%;
-    width: 20%;
-    opacity: 0.5;
+    justify-content: center;
+    height: auto;
+    margin-bottom: 10%;
+}
+
+.home-btn a {
+    width: 50%;
+}
+
+#back-and-home-btn {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10%;
+}
+
+#back-and-home-btn a {
+    width: 30%;
+    height: auto;
 }
 
 #upcoming-game {
@@ -95,7 +119,6 @@ div.btn-container a {
     height: 20%;
     margin-left: 25%;
     text-shadow: 2px 2px 4px whitesmoke;
-
 }
 
 .about {
@@ -107,4 +130,8 @@ div.btn-container a {
 .logo {
     width: 75px;
     height: 75px;
+}
+
+.table {
+    text-shadow: 2px 2px 4px whitesmoke;
 }

@@ -22,7 +22,29 @@
 
         <h1 class="title">Game Schedule</h1>
 
+        <table id="table" class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Teams</th>
+                    <th>Location</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="schedule in schedule">
+                    <td><b>{{ schedule.date }}</b></td>
+                    <td><b>{{ schedule.home_team }} vs {{ schedule.away_team }}</b></td>
+                    <td><b>{{ schedule.field }}</b></td>
+                    <td><b>{{ schedule.time }}</b></td>
+                </tr>
+            </tbody>
+        </table>
 
+        <div id="back-and-home-btn">
+            <a type="button" id="home" href="Home-NYSL-app.html" class="btn">Home</a>
+            <a type="button" id="game-info" href="Game-info-NYSL.html" class="btn">Back</a>
+        </div>
 
     </div>
 </body>
