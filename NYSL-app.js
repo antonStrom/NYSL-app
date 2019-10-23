@@ -120,6 +120,32 @@ const app = new Vue({
                 field: "North",
                 time: "1:00PM"
             }
+        ],
+        location: [{
+                field: 'AJ Katzenmaier',
+                adress: '1829 Kennedy Dr, North Chicago, IL 60088, USA',
+                url: 'location1.html'
+            },
+            {
+                field: 'Greenbay',
+                adress: '2100 Green Bay Rd, North Chicago, IL 60064, USA'
+            },
+            {
+                field: 'Howard A Yeager',
+                adress: '1811 Morrow Ave, North Chicago, IL 60064, USA'
+            },
+            {
+                field: 'Marjorie P Hart',
+                adress: 'N Orchard St, Chicago, IL 60614, USA'
+            },
+            {
+                field: 'North',
+                adress: '1717 17th St, North Chicago, IL 60064, USA'
+            },
+            {
+                field: 'South',
+                adress: '8255 S Houston Ave, Chicago, IL 60617'
+            }
         ]
     },
     created() {
@@ -137,44 +163,3 @@ const app = new Vue({
         }
     }
 });
-
-
-// new Date().toLocaleString()
-
-// teams: [{
-//     team: "U1",
-//     home_field: "AJ Katzenmaier",
-//     id: "111",
-//     logo: ""
-// },
-// {
-//     team: "U2",
-//     home_field: "Greenbay",
-//     id: "222",
-//     logo: ""
-// },
-// {
-//     team: "U3",
-//     home_field: "Howard A Yeager",
-//     id: "333",
-//     logo: ""
-// },
-// {
-//     team: "U4",
-//     home_field: "Marjorie P Hart",
-//     id: "444",
-//     logo: ""
-// },
-// {
-//     team: "U5",
-//     home_field: "North",
-//     id: "555",
-//     logo: ""
-// },
-// {
-//     team: "U6",
-//     home_field: "South",
-//     id: "666",
-//     logo: ""
-// }
-// ],
