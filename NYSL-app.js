@@ -2,119 +2,119 @@ const app = new Vue({
     el: '#app',
     data: {
         schedule: [{
-                date: "01/9",
+                date: "01/9/2019",
                 home_team: "U1",
                 away_team: "U4",
                 field: "AJ Katzenmaier",
                 time: "9:30AM"
             },
             {
-                date: "01/9",
+                date: "01/9/2019",
                 home_team: "U3",
                 away_team: "U2",
                 field: "Howard A Yeager",
                 time: "1:00PM"
             },
             {
-                date: "08/9",
+                date: "08/9/2019",
                 home_team: "U5",
                 away_team: "U6",
                 field: "North",
                 time: "9:30AM"
             },
             {
-                date: "08/9",
+                date: "08/9/2019",
                 home_team: "U6",
                 away_team: "U1",
                 field: "South",
                 time: "1:00PM"
             },
             {
-                date: "15/9",
+                date: "15/9/2019",
                 home_team: "U2",
                 away_team: "U4",
                 field: "Greenbay",
                 time: "9:30AM"
             },
             {
-                date: "15/9",
+                date: "15/9/2019",
                 home_team: "U3",
                 away_team: "U5",
                 field: "Howard A Yeager",
                 time: "1:00PM"
             },
             {
-                date: "22/9",
+                date: "22/9/2019",
                 home_team: "U1",
                 away_team: "U3",
                 field: "AJ Katzenmaier",
                 time: "9:30AM"
             },
             {
-                date: "22/9",
+                date: "22/9/2019",
                 home_team: "U2",
                 away_team: "U6",
                 field: "Greenbay",
                 time: "1:00PM"
             },
             {
-                date: "29/9",
+                date: "29/9/2019",
                 home_team: "U4",
                 away_team: "U5",
                 field: "Marjorie P Hart",
                 time: "9:30AM"
             },
             {
-                date: "06/10",
+                date: "06/10/2019",
                 home_team: "U2",
                 away_team: "U5",
                 field: "Greenbay",
                 time: "9:30AM"
             },
             {
-                date: "06/10",
+                date: "06/10/2019",
                 home_team: "U1",
                 away_team: "U6",
                 field: "AJ Katzenmaier",
                 time: "1:00PM"
             },
             {
-                date: "08/10",
+                date: "08/10/2019",
                 home_team: "U3",
                 away_team: "U4",
                 field: "Howard A Yeager",
                 time: "9:30AM"
             },
             {
-                date: "08/10",
+                date: "08/10/2019",
                 home_team: "U5",
                 away_team: "U1",
                 field: "North",
                 time: "1:00PM"
             },
             {
-                date: "20/10",
+                date: "20/10/2019",
                 home_team: "U6",
                 away_team: "U3",
                 field: "South",
                 time: "9:30AM"
             },
             {
-                date: "20/10",
+                date: "20/10/2019",
                 home_team: "U2",
                 away_team: "U4",
                 field: "Greenbay",
                 time: "1:00PM"
             },
             {
-                date: "27/10",
+                date: "27/10/2019",
                 home_team: "U3",
                 away_team: "U1",
                 field: "Howard A Yeager",
                 time: "9:30AM"
             },
             {
-                date: "27/10",
+                date: "27/10/2019",
                 home_team: "U5",
                 away_team: "U6",
                 field: "North",
@@ -124,7 +124,6 @@ const app = new Vue({
         location: [{
                 field: 'AJ Katzenmaier',
                 adress: '1829 Kennedy Dr, North Chicago, IL 60088, USA',
-                url: 'location1.html'
             },
             {
                 field: 'Greenbay',
