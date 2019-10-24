@@ -20,47 +20,35 @@
             <img src="green-soccer-field.jpg" alt="soccer field" id="background">
         </div>
 
-        <h1 class="title">Saturday Game</h1>
+        <h1 class="title">Scoreboard</h1>
 
-        <h5 class="date">{{ schedule[n].date }}</h5>
-        <h4 class="time">9:30AM</h4>
-        <div class="field">
-            <h5>Location: {{ schedule[n].field }}</h5>
-        </div>
-
-        <div id="AM-game">
-            <div class="home-team">
-                <h1>{{ schedule[n].home_team }}</h1>
-            </div>
-            <h3 class="vs">VS.</h3>
-            <div class="away-team">
-                <h1>{{ schedule[n].away_team }}</h1>
-            </div>
-        </div>
-
-        <h4 class="time" id="late-game">{{ schedulePM[j].time }}</h4>
-        <div class="field">
-            <h5>{{ schedulePM[j].field }}</h5>
-        </div>
-        <div id="PM-game">
-            <div class="home-team">
-                <h1>{{ schedulePM[j].home_team }}</h1>
-            </div>
-            <h3 class="vs">{{ schedulePM[j].vs }}</h3>
-            <div class="away-team">
-                <h1>{{ schedulePM[j].away_team }}</h1>
-            </div>
-        </div>
+        <table id="table" class="table">
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Games Played</th>
+                    <th>Wins</th>
+                    <th>Ties</th>
+                    <th>Losses</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="result in result">
+                    <td><b>{{ result.team }}</b></td>
+                    <td><b>{{ result.games_played }}</b></td>
+                    <td><b>{{ result.win }}</b></td>
+                    <td><b>{{ result.tie }}</b></td>
+                    <td><b>{{ result.loss }}</b></td>
+                    <td><b>{{ result.points }}</b></td>
+                </tr>
+            </tbody>
+        </table>
 
         <div id="back-and-home-btn">
             <a type="button" id="home" href="Home-NYSL-app.html" class="btn">Home</a>
-            <a type="button" id="upcoming-game" href="Upcoming-NYSL-app.html" class="btn">Upcoming Games</a>
         </div>
 
-        <div class="game-over">
-            <a href="result-NYSL-app.html" @click="n++, j++" :disabled="n >= gameDayAM.length - 1" id="game-over">Game
-                Finished</a>
-        </div>
     </div>
 </body>
 
