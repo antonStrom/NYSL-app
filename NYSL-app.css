@@ -180,7 +180,18 @@ div.btn-container a {
     height: 50px;
 }
 
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .end-result {
     display: flex;
     justify-content: space-around;
+}
+
+/* will finish later */
+#messageboard {
+    text-decoration: line-through;
 }

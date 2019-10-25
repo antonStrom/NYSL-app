@@ -139,51 +139,51 @@ const app = new Vue({
         ],
         result: [{
                 team: "U1",
-                games_played: "",
-                win: "",
-                tie: "",
-                loss: "",
-                points: ""
+                games_played: 3,
+                win: 2,
+                tie: 1,
+                loss: 0,
+                points: 7
             },
             {
                 team: "U2",
-                games_played: "",
-                win: "",
-                tie: "",
-                loss: "",
-                points: ""
+                games_played: 3,
+                win: 1,
+                tie: 0,
+                loss: 2,
+                points: 3
             },
             {
                 team: "U3",
-                games_played: "",
-                win: "",
-                tie: "",
-                loss: "",
-                points: ""
+                games_played: 3,
+                win: 0,
+                tie: 1,
+                loss: 2,
+                points: 1
             },
             {
                 team: "U4",
-                games_played: "",
-                win: "",
-                tie: "",
-                loss: "",
-                points: ""
+                games_played: 3,
+                win: 2,
+                tie: 0,
+                loss: 1,
+                points: 6
             },
             {
                 team: "U5",
-                games_played: "",
-                win: "",
-                tie: "",
-                loss: "",
-                points: ""
+                games_played: 2,
+                win: 1,
+                tie: 0,
+                loss: 1,
+                points: 3
             },
             {
                 team: "U6",
-                games_played: "",
-                win: "",
-                tie: "",
-                loss: "",
-                points: ""
+                games_played: 2,
+                win: 0,
+                tie: 2,
+                loss: 0,
+                points: 2
             }
         ],
         location: [{
@@ -217,6 +217,7 @@ const app = new Vue({
     created() {
 
     },
+
     methods: {
 
     },
@@ -226,6 +227,11 @@ const app = new Vue({
         },
         gameDayPM() {
             return this.schedulePM
+        },
+        sortResult() {
+            return this.result.sort(function (b, a) {
+                return a.points - b.points;
+            });
         }
     }
 });
