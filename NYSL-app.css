@@ -1,4 +1,4 @@
-#background {
+#background-portrait {
     position: fixed;
     height: 100%;
     width: 100%;
@@ -194,4 +194,42 @@ div.btn-container a {
 /* will finish later */
 #messageboard {
     text-decoration: line-through;
+}
+
+/* .background-img-portrait {
+    
+} */
+
+#background-portrait {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+#backgound-landscape {
+    display: inline-block;
+    position: fixed;
+    width: 100%;
+    height: 400px;
+    z-index: -1;
+}
+
+
+/* @media screen and (min-device-width:320px) and (max-device-width:480px) {} */
+
+/* Portrait */
+@media screen and (orientation: portrait) {
+    #background-portrait {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+    }
+}
+
+/* landscape */
+@media screen and (orientation: landscape) {
+    #backgound-landscape {}
 }
