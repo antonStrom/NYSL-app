@@ -24,20 +24,44 @@
             <img src="soccer-field.png" alt="soccer field" id="background-landscape">
         </div>
 
-        <h1 class='title'>Location</h1>
+        <h1 class="title">Result</h1>
 
-        <div class="btn-container">
-            <a href="location1.html" class="btn" type="button">AJ Katzenmaier</a>
-            <a href="location2.html" class="btn" type="button">Greenbay</a>
-            <a href="location3.html" class="btn" type="button">Howard A Yeager</a>
-            <a href="location4.html" class="btn" type="button">Marjorie P Hart</a>
-            <a href="location5.html" class="btn" type="button">North</a>
-            <a href="location6.html" class="btn" type="button">South</a>
+        <div id="AM-game">
+            <div class="home-team">
+                <h1>{{ schedule[n].home_team }}</h1>
+            </div>
+            <h3 class="vs">VS.</h3>
+            <div class="away-team">
+                <h1>{{ schedule[n].away_team }}</h1>
+            </div>
+        </div>
+        <form class="end-result">
+            <input type="number" class="input" id="home">
+            <input type="number" class="input" id="away">
+        </form>
+
+        <div id="AM-game">
+            <div class="home-team">
+                <h1>{{ schedulePM[j].home_team }}</h1>
+            </div>
+            <h3 class="vs">VS.</h3>
+            <div class="away-team">
+                <h1>{{ schedulePM[j].away_team }}</h1>
+            </div>
+        </div>
+        <form class="end-result">
+            <input type="number" class="input" id="home">
+            <input type="number" class="input" id="away">
+        </form>
+
+        <div class="submit">
+            <button id="submit">Submit</button>
         </div>
 
         <div id="back-and-home-btn">
-            <a type="button" id="home" href="Home-NYSL-app.html" class="btn">Home</a>
-
+            <a type="button" id="home" href="index.html" class="btn">Home</a>
+            <a type="button" id="home" href="scoreboard-NYSL-app.html" class="btn">Scoreboard</a>
+            <a type="button" id="game-info" href="Game-info-NYSL.html" class="btn">Game info</a>
         </div>
 
     </div>

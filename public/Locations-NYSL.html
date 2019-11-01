@@ -24,33 +24,20 @@
             <img src="soccer-field.png" alt="soccer field" id="background-landscape">
         </div>
 
-        <h1 class="title">Scoreboard</h1>
+        <h1 class='title'>Location</h1>
 
-        <table id="table" class="table">
-            <thead>
-                <tr>
-                    <th>Team</th>
-                    <th>Games Played</th>
-                    <th>Wins</th>
-                    <th>Ties</th>
-                    <th>Losses</th>
-                    <th>Points</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="result in sortResult">
-                    <td><b>{{ result.team }}</b></td>
-                    <td><b>{{ result.games_played }}</b></td>
-                    <td><b>{{ result.win }}</b></td>
-                    <td><b>{{ result.tie }}</b></td>
-                    <td><b>{{ result.loss }}</b></td>
-                    <td><b>{{ result.points }}</b></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="btn-container">
+            <a href="location1.html" class="btn" type="button">AJ Katzenmaier</a>
+            <a href="location2.html" class="btn" type="button">Greenbay</a>
+            <a href="location3.html" class="btn" type="button">Howard A Yeager</a>
+            <a href="location4.html" class="btn" type="button">Marjorie P Hart</a>
+            <a href="location5.html" class="btn" type="button">North</a>
+            <a href="location6.html" class="btn" type="button">South</a>
+        </div>
 
         <div id="back-and-home-btn">
-            <a type="button" id="home" href="Home-NYSL-app.html" class="btn">Home</a>
+            <a type="button" id="home" href="index.html" class="btn">Home</a>
+
         </div>
 
     </div>

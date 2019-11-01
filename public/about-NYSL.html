@@ -24,46 +24,28 @@
             <img src="soccer-field.png" alt="soccer field" id="background-landscape">
         </div>
 
-        <h1 class="title">Saturday Game</h1>
+        <h1 class="title">About NYSL</h1>
 
-        <h5 class="date">{{ schedule[n].date }}</h5>
-        <h4 class="time">9:30AM</h4>
-        <div class="field">
-            <h5>Location: {{ schedule[n].field }}</h5>
-        </div>
+        <div class="about">
+            <h3>Mission</h3>
+            <p>To support young athletes living in Chicago's northside neighborhoods, who have an interest in learning
+                and playing soccer, with opportunities to learn and practice skills related to the game of soccer,
+                specifically those skills around team cooperation and good sportsmanship.</p>
 
-        <div id="AM-game">
-            <div class="home-team">
-                <h1>{{ schedule[n].home_team }}</h1>
-            </div>
-            <h3 class="vs">VS.</h3>
-            <div class="away-team">
-                <h1>{{ schedule[n].away_team }}</h1>
-            </div>
-        </div>
+            <h3>Vision</h3>
+            <p>The Northside Youth Soccer League aspires to develop strong, well-rounded, and mindful athletes through
+                the building of character, self-discipline, and leadership.</p>
 
-        <h4 class="time" id="late-game">{{ schedulePM[j].time }}</h4>
-        <div class="field">
-            <h5>{{ schedulePM[j].field }}</h5>
-        </div>
-        <div id="PM-game">
-            <div class="home-team">
-                <h1>{{ schedulePM[j].home_team }}</h1>
-            </div>
-            <h3 class="vs">{{ schedulePM[j].vs }}</h3>
-            <div class="away-team">
-                <h1>{{ schedulePM[j].away_team }}</h1>
-            </div>
+            <h3>General Information</h3>
+            <p>The Northside Youth Soccer League was established in 1996 to provide athletes residing in Chicago's
+                northside neighborhoods an environment in which to learn and play soccer. To be a member of NYSL, you
+                must be between the ages of 4 - 12 and reside in a Chicago northside neighborhood. NYSL is run by a
+                small full-time staff, and relies on the generous volunteer time of parents and previous league members.
+            </p>
         </div>
 
         <div id="back-and-home-btn">
-            <a type="button" id="home" href="Home-NYSL-app.html" class="btn">Home</a>
-            <a type="button" id="upcoming-game" href="Upcoming-NYSL-app.html" class="btn">Upcoming Games</a>
-        </div>
-
-        <div class="game-over">
-            <a href="result-NYSL-app.html" @click="n++, j++" :disabled="n >= gameDayAM.length - 1" id="game-over">Game
-                Finished</a>
+            <a type="button" id="home-btn" href="index.html" class="btn">Home</a>
         </div>
     </div>
 </body>
