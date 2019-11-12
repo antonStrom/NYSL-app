@@ -213,12 +213,88 @@ const app = new Vue({
         ],
         n: 0,
         j: 0,
+        message: "",
+        messages: [],
+        loginStatus: false
     },
     created() {
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in.
 
+                app.getPosts();
+                console.log("user logged in")
+                document.getElementById("logout").style.display = "block";
+                document.getElementById("login").style.display = "none";
+                // document.getElementsByClassName("advice").style.display = "none";
+
+            } else {
+                // No user is signed in.
+                console.log("user logged out")
+                document.getElementById("logout").style.display = "none";
+                document.getElementById("login").style.display = "block";
+                document.getElementById("message").style.display = "none";
+                document.getElementById("notLoggedIn").style.display = "block";
+            }
+        });
     },
 
     methods: {
+        saveMessage() {
+
+            // https://firebase.google.com/docs/database/web/read-and-write
+
+            // Values
+            var text = this.message;
+            var userName = firebase.auth().currentUser.displayName;
+
+
+            // A post entry
+
+            var post = {
+                name: userName,
+                body: text
+            };
+
+            // Get a key for a new Post.
+            var newPostKey = firebase.database().ref().child('chat').push().key;
+
+            //Write data
+            var updates = {};
+            updates[newPostKey] = post;
+            return firebase.database().ref('chat').update(updates);
+
+
+        },
+        getPosts() {
+
+            firebase.database().ref('chat').on('value', function (data) {
+                app.messages = data.val(); //messages inside  the database
+            })
+
+
+            console.log("getting posts");
+
+        },
+        login() {
+
+            // https://firebase.google.com/docs/auth/web/google-signin
+
+            // Provider
+            var provider = new firebase.auth.GoogleAuthProvider();
+
+            // How to Log In
+            firebase.auth().signInWithPopup(provider);
+            loginStatus = true
+            console.log("login");
+
+        },
+        logout() {
+            firebase.auth().signOut();
+            document.getElementById("message").style.display = "none";
+            loginStatus = false
+            console.log("logout")
+        }
 
     },
     computed: {
@@ -235,3 +311,25 @@ const app = new Vue({
         }
     }
 });
+
+// const firebase = require("firebase");
+// // Required for side-effects
+// require("firebase/firestore");
+
+// var db = firebase.firestore();
+
+// db.settings({
+//     timestampsInSnapshots: true
+// })
+
+// window.db = db;
+
+// db.collection("users").add({
+//         message: this.message
+//     })
+//     .then(function (docRef) {
+//         console.log("Document written with ID: ", docRef.id);
+//     })
+//     .catch(function (error) {
+//         console.error("Error adding document: ", error);
+//     });
