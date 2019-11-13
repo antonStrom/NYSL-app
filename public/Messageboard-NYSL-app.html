@@ -10,9 +10,6 @@
     <link rel="stylesheet" type="text/css" href="NYSL-app.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <title>NYSL</title>
-    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 </head>
 
 <body>
@@ -31,35 +28,30 @@
         <!-- login/logout  -->
         <div class="chat">
             <div class="advice" v-if="!loginStatus">
-                You must to be logged
-                <button id="login" class="button is-info" @click="login; loginStatus = true">Login!</button>
+                You must to be logged in!
+                <button id="login" class="button is-info" @click="login(); loginStatus = true">Login!</button>
             </div>
-            <button @click="login; loginStatus = true" id="login">Login</button>
-            <button @click="logout; loginStatus = false" id="logout">Logout</button>
-            <!-- <div id="posts" class="box" v-if="messages >= 0">
-                Loading posts...
-            </div> -->
+            <button @click="logout(); loginStatus = false" id="logout" v-if="loginStatus">Logout</button>
 
-            <div id="notLoggedIn">
-                Please login
-            </div>
 
             <!-- chat  -->
             <div>
-                <div v-for="post in messages">
+                <div class="scroll" v-for="post in messages" v-if="loginStatus">
                     {{post.name}} : {{post.body}}
                 </div>
             </div>
-            <input type="text" v-model="message" @keyup.enter="saveMessage" placeholder="Say something..."><button
-                @click="saveMessage">Send</button>
+            <input type="text" v-if="loginStatus" v-model="message" @keyup.enter="saveMessage"
+                placeholder="Say something..."><button @click="saveMessage" v-if="loginStatus"
+                class="button is-primary">Send</button>
 
 
-            <!-- back and home btn  -->
-            <div id="back-and-home-btn">
-                <a type="button" id="home" href="index.html" class="btn">Home</a>
-                <a type="button" id="upcoming-game" href="Upcoming-NYSL-app.html" class="btn">Upcoming Games</a>
-            </div>
         </div>
+        <!-- back and home btn  -->
+        <div id="back-and-home-btn">
+            <a type="button" id="home" href="index.html" class="btn">Home</a>
+            <a type="button" id="upcoming-game" href="Upcoming-NYSL-app.html" class="btn">Upcoming Games</a>
+        </div>
+
 
     </div>
 </body>

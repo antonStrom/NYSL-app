@@ -224,17 +224,12 @@ const app = new Vue({
 
                 app.getPosts();
                 console.log("user logged in")
-                document.getElementById("logout").style.display = "block";
-                document.getElementById("login").style.display = "none";
-                // document.getElementsByClassName("advice").style.display = "none";
+                loginStatus = true;
 
             } else {
                 // No user is signed in.
                 console.log("user logged out")
-                document.getElementById("logout").style.display = "none";
-                document.getElementById("login").style.display = "block";
-                document.getElementById("message").style.display = "none";
-                document.getElementById("notLoggedIn").style.display = "block";
+                loginStatus = false;
             }
         });
     },
@@ -262,10 +257,11 @@ const app = new Vue({
             //Write data
             var updates = {};
             updates[newPostKey] = post;
+            this.message = "";
             return firebase.database().ref('chat').update(updates);
 
-
         },
+
         getPosts() {
 
             firebase.database().ref('chat').on('value', function (data) {
@@ -287,15 +283,17 @@ const app = new Vue({
             firebase.auth().signInWithPopup(provider);
             loginStatus = true
             console.log("login");
-
         },
         logout() {
             firebase.auth().signOut();
-            document.getElementById("message").style.display = "none";
             loginStatus = false
             console.log("logout")
-        }
-
+        },
+        // scrollToEnd() {
+        //     var container = document.querySelector(".scroll");
+        //     var scrollHeight = container.scrollHeight;
+        //     container.scrollTop = scrollHeight;
+        // }
     },
     computed: {
         gameDayAM() {
