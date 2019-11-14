@@ -35,17 +35,18 @@
 
 
             <!-- chat  -->
-            <div>
-                <div class="scroll" v-for="post in messages" v-if="loginStatus">
+            <div class="scroll" id="scroll">
+                <div v-for="post in messages" v-if="loginStatus" id="chat" v-chat-scroll>
                     {{post.name}} : {{post.body}}
                 </div>
             </div>
-            <input type="text" v-if="loginStatus" v-model="message" @keyup.enter="saveMessage"
-                placeholder="Say something..."><button @click="saveMessage" v-if="loginStatus"
-                class="button is-primary">Send</button>
-
-
         </div>
+        <input type=" text" v-if="loginStatus" v-model="message" @keyup.enter="saveMessage"
+            placeholder="Say something..."><button @click="saveMessage" v-if="loginStatus"
+            class="button is-primary">Send</button>
+
+
+
         <!-- back and home btn  -->
         <div id="back-and-home-btn">
             <a type="button" id="home" href="index.html" class="btn">Home</a>
@@ -113,5 +114,6 @@
 <!-- vue  -->
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="NYSL-app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-chat-scroll@1.3.6/dist/vue-chat-scroll.min.js"></script>
 
 </html>

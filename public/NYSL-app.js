@@ -232,6 +232,9 @@ const app = new Vue({
                 loginStatus = false;
             }
         });
+        // chat = document.getElementById('chat');
+        // var xH = chat.scrollHeight;
+        // chat.scrollTo(0, xH);
     },
 
     methods: {
@@ -258,8 +261,14 @@ const app = new Vue({
             var updates = {};
             updates[newPostKey] = post;
             this.message = "";
+            // console.log(this.scrollToEnd)
+            // var scroll = document.getElementById("scroll");
+            // allow 1px inaccuracy by adding 1
+            // var isScrolledToBottom = scroll.scrollHeight - scroll.clientHeight <= scroll.scrollTop + 1;
+            // if (isScrolledToBottom)
+            //     scroll.scrollTop = scroll.scrollHeight - scroll.clientHeight;
+            this.updateScroll();
             return firebase.database().ref('chat').update(updates);
-
         },
 
         getPosts() {
@@ -267,10 +276,8 @@ const app = new Vue({
             firebase.database().ref('chat').on('value', function (data) {
                 app.messages = data.val(); //messages inside  the database
             })
-
-
-            console.log("getting posts");
-
+            // this.scrollToEnd();
+            this.updateScroll();
         },
         login() {
 
@@ -289,12 +296,38 @@ const app = new Vue({
             loginStatus = false
             console.log("logout")
         },
+        scroll() {
+            var scroll = document.getElementById("scroll");
+            // allow 1px inaccuracy by adding 1
+            var isScrolledToBottom = scroll.scrollHeight - scroll.clientHeight <= scroll.scrollTop + 1;
+            if (isScrolledToBottom)
+                scroll.scrollTop = scroll.scrollHeight - scroll.clientHeight;
+            console.log(scroll.scrollHeight - scroll.clientHeight, scroll.scrollTop + 1);
+        },
+        updateScroll() {
+            var scroll = document.getElementById("scroll");
+            scroll.scrollTop = element.scrollHeight;
+        }
+        // scrollToBottom() {
+        //     var el = document.getElementById(chat);
+        //     el.scrollTop = el.scrollHeight;
+        // },
         // scrollToEnd() {
         //     var container = document.querySelector(".scroll");
         //     var scrollHeight = container.scrollHeight;
         //     container.scrollTop = scrollHeight;
+        // },
+
+        // scrollToEnd() {
+        //     var container = document.querySelector(".scroll");
+        //     container.scrollTop = container.scrollHeight;
         // }
+
     },
+    // mounted() {
+    //     this.scrollToEnd();
+    //     console.log("They see me scrolling, scrolling, scrolling")
+    // },
     computed: {
         gameDayAM() {
             return this.schedule
@@ -331,3 +364,18 @@ const app = new Vue({
 //     .catch(function (error) {
 //         console.error("Error adding document: ", error);
 //     });
+
+
+// var chat = document.getElementById("chat");
+// var c = 0;
+// var add = setInterval(function () {
+//     // allow 1px inaccuracy by adding 1
+//     var isScrolledToBottom = chat.scrollHeight - chat.clientHeight <= chat.scrollTop + 1;
+//     console.log(chat.scrollHeight - chat.clientHeight, chat.scrollTop + 1);
+//     var newElement = document.createElement("div");
+//     newElement.innerHTML = c++;
+//     chat.appendChild(newElement);
+//     // scroll to bottom if isScrolledToBotto
+//     if (isScrolledToBottom)
+//         chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+// }, 1000);
