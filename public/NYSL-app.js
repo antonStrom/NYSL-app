@@ -267,7 +267,8 @@ const app = new Vue({
             // var isScrolledToBottom = scroll.scrollHeight - scroll.clientHeight <= scroll.scrollTop + 1;
             // if (isScrolledToBottom)
             //     scroll.scrollTop = scroll.scrollHeight - scroll.clientHeight;
-            this.updateScroll();
+            // this.updateScroll();
+            this.scrollToEnd();
             return firebase.database().ref('chat').update(updates);
         },
 
@@ -276,8 +277,9 @@ const app = new Vue({
             firebase.database().ref('chat').on('value', function (data) {
                 app.messages = data.val(); //messages inside  the database
             })
+            setTimeout(this.scrollToEnd, 3000);
             // this.scrollToEnd();
-            this.updateScroll();
+            // this.updateScroll();
         },
         login() {
 
@@ -289,6 +291,8 @@ const app = new Vue({
             // How to Log In
             firebase.auth().signInWithPopup(provider);
             loginStatus = true
+            setTimeout(this.scrollToEnd, 3000);
+            // this.scrollToEnd();
             console.log("login");
         },
         logout() {
@@ -296,38 +300,37 @@ const app = new Vue({
             loginStatus = false
             console.log("logout")
         },
-        scroll() {
-            var scroll = document.getElementById("scroll");
-            // allow 1px inaccuracy by adding 1
-            var isScrolledToBottom = scroll.scrollHeight - scroll.clientHeight <= scroll.scrollTop + 1;
-            if (isScrolledToBottom)
-                scroll.scrollTop = scroll.scrollHeight - scroll.clientHeight;
-            console.log(scroll.scrollHeight - scroll.clientHeight, scroll.scrollTop + 1);
-        },
-        updateScroll() {
-            var scroll = document.getElementById("scroll");
-            scroll.scrollTop = element.scrollHeight;
-        }
+        // scroll() {
+        //     var scroll = document.getElementById("scroll");
+        //     // allow 1px inaccuracy by adding 1
+        //     var isScrolledToBottom = scroll.scrollHeight - scroll.clientHeight <= scroll.scrollTop + 1;
+        //     if (isScrolledToBottom)
+        //         scroll.scrollTop = scroll.scrollHeight - scroll.clientHeight;
+        //     console.log(scroll.scrollHeight - scroll.clientHeight, scroll.scrollTop + 1);
+        // },
+        // updateScroll() {
+        //     var scroll = document.getElementById("scroll");
+        //     scroll.scrollTop = element.scrollHeight;
+        // }
         // scrollToBottom() {
         //     var el = document.getElementById(chat);
         //     el.scrollTop = el.scrollHeight;
         // },
-        // scrollToEnd() {
-        //     var container = document.querySelector(".scroll");
-        //     var scrollHeight = container.scrollHeight;
-        //     container.scrollTop = scrollHeight;
-        // },
-
+        scrollToEnd() {
+            var container = document.querySelector(".scroll");
+            var scrollHeight = container.scrollHeight;
+            container.scrollTop = scrollHeight;
+        },
         // scrollToEnd() {
         //     var container = document.querySelector(".scroll");
         //     container.scrollTop = container.scrollHeight;
         // }
 
     },
-    // mounted() {
-    //     this.scrollToEnd();
-    //     console.log("They see me scrolling, scrolling, scrolling")
-    // },
+    mounted() {
+        this.scrollToEnd();
+        // console.log("They see me scrolling, scrolling, scrolling")
+    },
     computed: {
         gameDayAM() {
             return this.schedule
