@@ -1,377 +1,359 @@
-.background-img {
-    display: block;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-}
-
-.background-img-landscape {
-    display: none;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-}
-
-.btn-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
-.title {
-    display: flex;
-    justify-content: center;
-    padding: 4.3%;
-    text-shadow: 2px 2px 4px whitesmoke;
-}
-
-.gameDay {
-    display: flex;
-    justify-content: center;
-    text-shadow: 2px 2px 4px whitesmoke;
-}
-
-#AM-game {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 5%;
-    text-shadow: 2px 2px 4px whitesmoke;
-}
-
-.vs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 2px 2px 4px whitesmoke;
-}
-
-.field {
-    text-shadow: 2px 2px 4px whitesmoke;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#PM-game {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 10%;
-    text-shadow: 2px 2px 4px whitesmoke;
-}
-
-.date {
-    display: flex;
-    justify-content: center;
-    text-shadow: 2px 2px 4px whitesmoke;
-}
-
-.time {
-    display: flex;
-    justify-content: center;
-    text-shadow: 2px 2px 4px whitesmoke;
-}
-
-#late-game {
-    margin-top: 20%;
-}
-
-.events {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    opacity: 1;
-    text-shadow: 1px 1px 3px whitesmoke;
-    color: black;
-}
-
-.btn {
-    border: 2px solid black;
-    margin-top: 5%;
-    text-shadow: 1px 1px whitesmoke;
-    color: black;
-    opacity: 0.7;
-}
-
-div.btn-container a {
-    font-weight: bold;
-}
-
-.home-btn {
-    display: flex;
-    justify-content: center;
-    height: auto;
-    margin-bottom: 10%;
-}
-
-.home-btn a {
-    width: 50%;
-}
-
-#back-and-home-btn {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 10%;
-}
-
-#back-and-home-btn a {
-    width: auto;
-    height: auto;
-    font-weight: bold;
-}
-
-#upcoming-game {
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    height: 20%;
-    margin-left: 25%;
-    text-shadow: 2px 2px 4px whitesmoke;
-}
-
-#game-over {
-    margin-top: 300px;
-    font-weight: bold;
-    border: 2px solid black;
-    text-shadow: 1px 1px whitesmoke;
-    color: black;
-    opacity: 0.8;
-}
-
-.game-over {
-    display: flex;
-    justify-content: center;
-    text-shadow: 1px 1px whitesmoke;
-    opacity: 0.7;
-}
-
-.about {
-    opacity: 1;
-    text-shadow: 1px 1px 3px whitesmoke;
-    color: black;
-}
-
-.logo {
-    width: 75px;
-    height: 75px;
-}
-
-.table {
-    text-shadow: 2px 2px 4px whitesmoke;
-}
-
-.location {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.mapouter {
-    position: relative;
-    text-align: right;
-    height: 400px;
-    width: 400px;
-}
-
-.gmap_canvas {
-    overflow: hidden;
-    background: none !important;
-    height: 400px;
-    width: 400px;
-}
-
-.input {
-    width: 50px;
-    height: 50px;
-}
-
-.submit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.end-result {
-    display: flex;
-    justify-content: space-around;
-}
-
-/* will finish later */
-#messageboard {
-    text-decoration: line-through;
-}
-
-#background-portrait {
-    display: none;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-}
-
-#backgound-landscape {
-    display: block;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-/* Portrait */
-@media screen and (orientation: portrait) {
-    body {
+    .background-img {
+        display: block;
+        position: fixed;
         height: 100%;
         width: 100%;
-    }
-
-    #gmap_canvas {
-        height: 400px;
-        width: 400px;
-    }
-}
-
-/* landscape */
-@media screen and (orientation: landscape) {
-
-    .background-img {
-        display: none;
+        z-index: -1;
     }
 
     .background-img-landscape {
-        display: block;
+        display: none;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .btn-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+        padding: 4.3%;
+        text-shadow: 2px 2px 4px whitesmoke;
+    }
+
+    .gameDay {
+        display: flex;
+        justify-content: center;
+        text-shadow: 2px 2px 4px whitesmoke;
+    }
+
+    #AM-game {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5%;
+        text-shadow: 2px 2px 4px whitesmoke;
+    }
+
+    .vs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 2px 2px 4px whitesmoke;
+    }
+
+    .field {
+        text-shadow: 2px 2px 4px whitesmoke;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #PM-game {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 10%;
+        text-shadow: 2px 2px 4px whitesmoke;
+    }
+
+    .date {
+        display: flex;
+        justify-content: center;
+        text-shadow: 2px 2px 4px whitesmoke;
+    }
+
+    .time {
+        display: flex;
+        justify-content: center;
+        text-shadow: 2px 2px 4px whitesmoke;
+    }
+
+    #late-game {
+        margin-top: 20%;
+    }
+
+    .events {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        opacity: 1;
+        text-shadow: 1px 1px 3px whitesmoke;
+        color: black;
+    }
+
+    .btn {
+        border: 2px solid black;
+        margin-top: 5%;
+        text-shadow: 1px 1px whitesmoke;
+        color: black;
+        opacity: 0.7;
+    }
+
+    div.btn-container a {
+        font-weight: bold;
+    }
+
+    .home-btn {
+        display: flex;
+        justify-content: center;
+        height: auto;
+        margin-bottom: 10%;
+    }
+
+    .home-btn a {
+        width: 50%;
+    }
+
+    #back-and-home-btn {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 10%;
+    }
+
+    #back-and-home-btn a {
+        width: auto;
+        height: auto;
+        font-weight: bold;
+    }
+
+    #upcoming-game {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        height: 20%;
+        margin-left: 25%;
+        text-shadow: 2px 2px 4px whitesmoke;
+    }
+
+    #game-over {
+        margin-top: 300px;
+        font-weight: bold;
+        border: 2px solid black;
+        text-shadow: 1px 1px whitesmoke;
+        color: black;
+        opacity: 0.8;
+    }
+
+    .game-over {
+        display: flex;
+        justify-content: center;
+        text-shadow: 1px 1px whitesmoke;
+        opacity: 0.7;
+    }
+
+    .about {
+        opacity: 1;
+        text-shadow: 1px 1px 3px whitesmoke;
+        color: black;
+    }
+
+    .table {
+        text-shadow: 2px 2px 4px whitesmoke;
+    }
+
+    .location {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .mapouter {
-        display: flex;
-        justify-content: center;
         position: relative;
         text-align: right;
         height: 400px;
-        width: 100%;
+        width: 400px;
     }
 
-    #gmap_canvas {
+    .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
         height: 400px;
+        width: 400px;
+    }
+
+    .input {
+        width: 50px;
+        height: 50px;
+    }
+
+    .submit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .end-result {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #background-portrait {
+        display: none;
+        position: fixed;
+        height: 100%;
         width: 100%;
+        z-index: -1;
+    }
+
+    #backgound-landscape {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    /* Portrait */
+    @media screen and (orientation: portrait) {
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        #gmap_canvas {
+            height: 400px;
+            width: 400px;
+        }
+    }
+
+    /* landscape */
+    @media screen and (orientation: landscape) {
+
+        .background-img {
+            display: none;
+        }
+
+        .background-img-landscape {
+            display: block;
+        }
+
+        .mapouter {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            text-align: right;
+            height: 400px;
+            width: 100%;
+        }
+
+        #gmap_canvas {
+            height: 400px;
+            width: 100%;
+        }
+
+        .result-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+    }
+
+    .team-score {
+        font-size: 2em;
     }
 
     .result-container {
         display: flex;
-        flex-direction: row;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
         justify-content: space-evenly;
     }
-}
 
+    .chat {
+        height: 85vh;
+        max-width: 500;
+        width: 100vw;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+    }
 
+    #posts {
+        height: 350px;
+        width: 400px;
+        overflow: scroll;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
 
-.team-score {
-    font-size: 2em;
-}
+    }
 
-.result-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-}
+    .message {
+        border: 1px solid black;
+        padding: 5px;
+        margin: 5px;
+        background-color: lightgoldenrodyellow;
+        border-radius: 10px;
+        opacity: 0.8;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
 
-.chat {
-    height: 85vh;
-    /* height: 350px; */
-    width: 400px;
-    overflow: scroll;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-}
+    #notLoggedIn {
+        display: none;
+    }
 
-#posts {
-    height: 350px;
-    width: 400px;
-    overflow: scroll;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-}
+    .notification:not(:last-child) {
+        margin-bottom: .3rem;
+    }
 
-.message {
-    border: 1px solid black;
-    padding: 5px;
-    margin: 5px;
-    background-color: lightgoldenrodyellow;
-    border-radius: 10px;
-    opacity: 0.8;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+    .notification.is-info {
+        text-align: right;
+        max-width: 80%;
+        align-self: flex-end;
+        border-radius: 20px;
+    }
 
-/* #logout {
-    display: none;
-}
+    .notification.is-primary {
+        text-align: left;
+        max-width: 80%;
+        align-self: flex-start;
+        border-radius: 20px;
+    }
 
-#login {
-    display: block;
-} */
+    .scroll {
+        width: 95%;
+        overflow: auto;
+        overflow-y: scroll;
+        background-color: transparent;
+    }
 
-#notLoggedIn {
-    display: none;
-}
+    .yourMessage {
+        text-align: left;
+        max-width: 80%;
+        align-self: flex-start;
+        border-radius: 20px;
+        padding: 10px;
+        border: 1.2px solid black;
+        margin-top: 10px;
+        background-color: blue;
+    }
 
-.message {
-    display: block;
-    border: 1px solid black;
-    padding: 5px;
-    margin: 5px;
-    background-color: lightgoldenrodyellow;
-    border-radius: 10px;
-    opacity: 0.8;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+    .myMessage {
+        text-align: right;
+        max-width: 80%;
+        align-self: flex-end;
+        border-radius: 20px;
+        padding: 10px;
+        border: 1.2px solid black;
+        margin-top: 10px;
+        background-color: violet;
+    }
 
-/* .advice {
-    height: 100vh;
-    width: 400px;
-    position: sticky;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: grey;
-    color: white;
-    opacity: .7;
-    border-radius: 10px;
-    z-index: 100;
-} */
+    .form-control {
+        display: flex;
+        justify-content: center;
+    }
 
-
-
-.notification:not(:last-child) {
-    margin-bottom: .3rem;
-}
-
-.notification.is-info {
-    text-align: right;
-    max-width: 80%;
-    align-self: flex-end;
-    border-radius: 20px;
-}
-
-.notification.is-primary {
-    text-align: left;
-    max-width: 80%;
-    align-self: flex-start;
-    border-radius: 20px;
-}
-
-.scroll {
-    width: 400px;
-    /* max-height: 150px; */
-    overflow: auto;
-    /* height: 85vh; */
-    overflow-y: scroll;
-}
+    .card-footer {
+        padding: 0;
+        background-color: transparent;
+    }

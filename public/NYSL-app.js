@@ -232,9 +232,6 @@ const app = new Vue({
                 loginStatus = false;
             }
         });
-        // chat = document.getElementById('chat');
-        // var xH = chat.scrollHeight;
-        // chat.scrollTo(0, xH);
     },
 
     methods: {
@@ -245,13 +242,15 @@ const app = new Vue({
             // Values
             var text = this.message;
             var userName = firebase.auth().currentUser.displayName;
+            var email = firebase.auth().currentUser.email;
 
 
             // A post entry
 
             var post = {
                 name: userName,
-                body: text
+                body: text,
+                email: email
             };
 
             // Get a key for a new Post.
@@ -261,14 +260,7 @@ const app = new Vue({
             var updates = {};
             updates[newPostKey] = post;
             this.message = "";
-            // console.log(this.scrollToEnd)
-            // var scroll = document.getElementById("scroll");
-            // allow 1px inaccuracy by adding 1
-            // var isScrolledToBottom = scroll.scrollHeight - scroll.clientHeight <= scroll.scrollTop + 1;
-            // if (isScrolledToBottom)
-            //     scroll.scrollTop = scroll.scrollHeight - scroll.clientHeight;
-            // this.updateScroll();
-            this.scrollToEnd();
+            setTimeout(this.scrollToEnd, 5);
             return firebase.database().ref('chat').update(updates);
         },
 
@@ -277,9 +269,7 @@ const app = new Vue({
             firebase.database().ref('chat').on('value', function (data) {
                 app.messages = data.val(); //messages inside  the database
             })
-            setTimeout(this.scrollToEnd, 3000);
-            // this.scrollToEnd();
-            // this.updateScroll();
+            setTimeout(this.scrollToEnd, 2000);
         },
         login() {
 
@@ -291,8 +281,7 @@ const app = new Vue({
             // How to Log In
             firebase.auth().signInWithPopup(provider);
             loginStatus = true
-            setTimeout(this.scrollToEnd, 3000);
-            // this.scrollToEnd();
+            setTimeout(this.scrollToEnd, 2000);
             console.log("login");
         },
         logout() {
@@ -300,36 +289,14 @@ const app = new Vue({
             loginStatus = false
             console.log("logout")
         },
-        // scroll() {
-        //     var scroll = document.getElementById("scroll");
-        //     // allow 1px inaccuracy by adding 1
-        //     var isScrolledToBottom = scroll.scrollHeight - scroll.clientHeight <= scroll.scrollTop + 1;
-        //     if (isScrolledToBottom)
-        //         scroll.scrollTop = scroll.scrollHeight - scroll.clientHeight;
-        //     console.log(scroll.scrollHeight - scroll.clientHeight, scroll.scrollTop + 1);
-        // },
-        // updateScroll() {
-        //     var scroll = document.getElementById("scroll");
-        //     scroll.scrollTop = element.scrollHeight;
-        // }
-        // scrollToBottom() {
-        //     var el = document.getElementById(chat);
-        //     el.scrollTop = el.scrollHeight;
-        // },
         scrollToEnd() {
             var container = document.querySelector(".scroll");
             var scrollHeight = container.scrollHeight;
             container.scrollTop = scrollHeight;
-        },
-        // scrollToEnd() {
-        //     var container = document.querySelector(".scroll");
-        //     container.scrollTop = container.scrollHeight;
-        // }
-
+        }
     },
     mounted() {
         this.scrollToEnd();
-        // console.log("They see me scrolling, scrolling, scrolling")
     },
     computed: {
         gameDayAM() {
@@ -345,40 +312,3 @@ const app = new Vue({
         }
     }
 });
-
-// const firebase = require("firebase");
-// // Required for side-effects
-// require("firebase/firestore");
-
-// var db = firebase.firestore();
-
-// db.settings({
-//     timestampsInSnapshots: true
-// })
-
-// window.db = db;
-
-// db.collection("users").add({
-//         message: this.message
-//     })
-//     .then(function (docRef) {
-//         console.log("Document written with ID: ", docRef.id);
-//     })
-//     .catch(function (error) {
-//         console.error("Error adding document: ", error);
-//     });
-
-
-// var chat = document.getElementById("chat");
-// var c = 0;
-// var add = setInterval(function () {
-//     // allow 1px inaccuracy by adding 1
-//     var isScrolledToBottom = chat.scrollHeight - chat.clientHeight <= chat.scrollTop + 1;
-//     console.log(chat.scrollHeight - chat.clientHeight, chat.scrollTop + 1);
-//     var newElement = document.createElement("div");
-//     newElement.innerHTML = c++;
-//     chat.appendChild(newElement);
-//     // scroll to bottom if isScrolledToBotto
-//     if (isScrolledToBottom)
-//         chat.scrollTop = chat.scrollHeight - chat.clientHeight;
-// }, 1000);
