@@ -32,7 +32,7 @@
                 <h1>U1</h1>
                 <button type="button" @click="result[0].points++" class="btn btn-success">+</button>
                 <span class="team-score">{{ result[0].points }}</span>
-                <button type="button" @click="result[0].points--" :disable="result[0].points >= 0"
+                <button type="button" @click="result[0].points--" :disable="result[0].points == 0"
                     class="btn btn-danger">-</button>
             </div>
 

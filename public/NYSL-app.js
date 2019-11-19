@@ -6,6 +6,151 @@ const app = new Vue({
                 home_team: "U1",
                 away_team: "U4",
                 field: "AJ Katzenmaier",
+                location: "location1.html",
+                time: "9:30AM"
+            },
+            {
+                date: "01/9/2019",
+                home_team: "U3",
+                vs: "VS.",
+                away_team: "U2",
+                field: "Location: Howard A Yeager",
+                location: "location3.html",
+                time: "1:00PM"
+            },
+            {
+                date: "08/9/2019",
+                home_team: "U5",
+                away_team: "U6",
+                field: "North",
+                location: "location5.html",
+                time: "9:30AM"
+            },
+            {
+                date: "08/9/2019",
+                home_team: "U6",
+                vs: "VS.",
+                away_team: "U1",
+                field: "Location: South",
+                location: "location6.html",
+                time: "1:00PM"
+            },
+            {
+                date: "15/9/2019",
+                home_team: "U2",
+                away_team: "U4",
+                field: "Greenbay",
+                location: "location2.html",
+                time: "9:30AM"
+            },
+            {
+                date: "15/9/2019",
+                home_team: "U3",
+                vs: "VS.",
+                away_team: "U5",
+                field: "Location: Howard A Yeager",
+                location: "location3.html",
+                time: "1:00PM"
+            },
+            {
+                date: "22/9/2019",
+                home_team: "U1",
+                away_team: "U3",
+                field: "AJ Katzenmaier",
+                location: "location1.html",
+                time: "9:30AM"
+            },
+            {
+                date: "22/9/2019",
+                home_team: "U2",
+                vs: "VS.",
+                away_team: "U6",
+                field: "Location: Greenbay",
+                location: "location2.html",
+                time: "1:00PM"
+            },
+            {
+                date: "29/9/2019",
+                home_team: "U4",
+                away_team: "U5",
+                field: "Marjorie P Hart",
+                location: "location4.html",
+                time: "9:30AM"
+            },
+            {
+                date: "06/10/2019",
+                home_team: "U2",
+                away_team: "U5",
+                field: "Greenbay",
+                location: "location2.html",
+                time: "9:30AM"
+            },
+            {
+                date: "06/10/2019",
+                home_team: "U1",
+                vs: "VS.",
+                away_team: "U6",
+                field: "Location: AJ Katzenmaier",
+                location: "location1.html",
+                time: "1:00PM"
+            },
+            {
+                date: "08/10/2019",
+                home_team: "U3",
+                away_team: "U4",
+                field: "Howard A Yeager",
+                location: "location3.html",
+                time: "9:30AM"
+            },
+            {
+                date: "08/10/2019",
+                home_team: "U5",
+                vs: "VS.",
+                away_team: "U1",
+                field: "Location: North",
+                location: "location5.html",
+                time: "1:00PM"
+            },
+            {
+                date: "20/10/2019",
+                home_team: "U6",
+                away_team: "U3",
+                field: "South",
+                location: "location6.html",
+                time: "9:30AM"
+            },
+            {
+                date: "20/10/2019",
+                home_team: "U2",
+                vs: "VS.",
+                away_team: "U4",
+                field: "Location: Greenbay",
+                location: "location2.html",
+                time: "1:00PM"
+            },
+            {
+                date: "27/10/2019",
+                home_team: "U3",
+                away_team: "U1",
+                field: "Howard A Yeager",
+                location: "location3.html",
+                time: "9:30AM"
+            },
+            {
+                date: "27/10/2019",
+                home_team: "U5",
+                vs: "VS.",
+                away_team: "U6",
+                field: "Location: North",
+                location: "location5.html",
+                time: "1:00PM"
+            }
+        ],
+        scheduleAM: [{
+                date: "01/9/2019",
+                home_team: "U1",
+                away_team: "U4",
+                field: "AJ Katzenmaier",
                 time: "9:30AM"
             },
             {
@@ -211,6 +356,7 @@ const app = new Vue({
                 adress: '8255 S Houston Ave, Chicago, IL 60617'
             }
         ],
+        score: [],
         n: 0,
         j: 0,
         message: "",
@@ -293,6 +439,87 @@ const app = new Vue({
             var container = document.querySelector(".scroll");
             var scrollHeight = container.scrollHeight;
             container.scrollTop = scrollHeight;
+        },
+        collapse() {
+            // Read more/Read less button
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("myBtn");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less";
+                moreText.style.display = "inline";
+            }
+        },
+        getScores() {
+            firebase.database().ref('scores').on('value', function (data) {
+                app.score = data.val(); //messages inside  the database
+            })
+        },
+        saveScores() {
+
+            // A post entry
+
+            var post = [{
+                    team: "U1",
+                    games_played: 3,
+                    win: 2,
+                    tie: 1,
+                    loss: 0,
+                    points: 7
+                },
+                {
+                    team: "U2",
+                    games_played: 3,
+                    win: 1,
+                    tie: 0,
+                    loss: 2,
+                    points: 3
+                },
+                {
+                    team: "U3",
+                    games_played: 3,
+                    win: 0,
+                    tie: 1,
+                    loss: 2,
+                    points: 1
+                },
+                {
+                    team: "U4",
+                    games_played: 3,
+                    win: 2,
+                    tie: 0,
+                    loss: 1,
+                    points: 6
+                },
+                {
+                    team: "U5",
+                    games_played: 2,
+                    win: 1,
+                    tie: 0,
+                    loss: 1,
+                    points: 3
+                },
+                {
+                    team: "U6",
+                    games_played: 2,
+                    win: 0,
+                    tie: 2,
+                    loss: 0,
+                    points: 2
+                }
+            ]
+
+
+            //Write data
+            var updates = {};
+            updates["season-one"] = post;
+            return firebase.database().ref('scores').update(updates);
         }
     },
     mounted() {
