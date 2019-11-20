@@ -288,7 +288,7 @@ const app = new Vue({
                 win: 2,
                 tie: 1,
                 loss: 0,
-                points: 7
+                points: 5
             },
             {
                 team: "U2",
@@ -378,6 +378,8 @@ const app = new Vue({
                 loginStatus = false;
             }
         });
+        this.getScores("season-one");
+        this.getNextGame();
     },
 
     methods: {
@@ -435,6 +437,27 @@ const app = new Vue({
             loginStatus = false
             console.log("logout")
         },
+        getNextGame() {
+            firebase.database().ref('nextgame').on('value', function (data) {
+                app.n = data.val(); //messages inside  the database
+            })
+        },
+        nextGame() {
+
+            // A post entry 
+            var n = this.n;
+            var j = this.j;
+
+            var post = {
+                n: n,
+                j: j
+            }
+            //Write data
+            var updates = {};
+            updates["n"] = post;
+            return firebase.database().ref('nextgame').update(updates);
+        },
+
         scrollToEnd() {
             var container = document.querySelector(".scroll");
             var scrollHeight = container.scrollHeight;
@@ -456,14 +479,20 @@ const app = new Vue({
                 moreText.style.display = "inline";
             }
         },
-        getScores() {
+        getScores(season) {
             firebase.database().ref('scores').on('value', function (data) {
-                app.score = data.val(); //messages inside  the database
+                app.score = data.val()[season]; //messages inside  the database
             })
         },
         saveScores() {
 
-            // A post entry
+            // A post entry 
+            var points1 = app.score["season-one"][0].points;
+            var points2 = app.score["season-one"][1].points;
+            var points3 = app.score["season-one"][2].points;
+            var points4 = app.score["season-one"][3].points;
+            var points5 = app.score["season-one"][4].points;
+            var points6 = app.score["season-one"][5].points;
 
             var post = [{
                     team: "U1",
@@ -471,7 +500,7 @@ const app = new Vue({
                     win: 2,
                     tie: 1,
                     loss: 0,
-                    points: 7
+                    points: points1
                 },
                 {
                     team: "U2",
@@ -479,7 +508,7 @@ const app = new Vue({
                     win: 1,
                     tie: 0,
                     loss: 2,
-                    points: 3
+                    points: points2
                 },
                 {
                     team: "U3",
@@ -487,7 +516,7 @@ const app = new Vue({
                     win: 0,
                     tie: 1,
                     loss: 2,
-                    points: 1
+                    points: points3
                 },
                 {
                     team: "U4",
@@ -495,7 +524,7 @@ const app = new Vue({
                     win: 2,
                     tie: 0,
                     loss: 1,
-                    points: 6
+                    points: points4
                 },
                 {
                     team: "U5",
@@ -503,7 +532,7 @@ const app = new Vue({
                     win: 1,
                     tie: 0,
                     loss: 1,
-                    points: 3
+                    points: points5
                 },
                 {
                     team: "U6",
@@ -511,11 +540,9 @@ const app = new Vue({
                     win: 0,
                     tie: 2,
                     loss: 0,
-                    points: 2
+                    points: points6
                 }
             ]
-
-
             //Write data
             var updates = {};
             updates["season-one"] = post;
@@ -533,9 +560,34 @@ const app = new Vue({
             return this.schedulePM
         },
         sortResult() {
-            return this.result.sort(function (b, a) {
+            return this.score.sort(function (b, a) {
                 return a.points - b.points;
             });
         }
     }
 });
+
+
+
+// getNextGame() {
+//     firebase.database().ref('nextgame').on('value', function (data) {
+//         app.n = data.val(); //messages inside  the database
+//     })
+// },
+
+// nextGame() {
+
+//     // A post entry 
+//     var n = this.n;
+//     var j = this.j;
+
+//     var post = {
+//         n: n,
+//         j: j
+//     }
+//     //Write data
+//     var updates = {};
+//     updates["n"] = post;
+//     return firebase.database().ref('nextgame').update(updates);
+// }
+// },

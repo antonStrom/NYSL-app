@@ -26,6 +26,16 @@
 
         <h1 class="title">Scoreboard</h1>
 
+        <!-- <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Season
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+            </div>
+        </div> -->
+
         <table id="table" class="table">
             <thead>
                 <tr>
@@ -38,7 +48,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="result in sortResult">
+                <tr v-for='result in sortResult'>
                     <td><b>{{ result.team }}</b></td>
                     <td><b>{{ result.games_played }}</b></td>
                     <td><b>{{ result.win }}</b></td>
