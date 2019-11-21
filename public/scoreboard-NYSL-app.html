@@ -26,38 +26,40 @@
 
         <h1 class="title">Scoreboard</h1>
 
-        <!-- <div class="dropdown">
+        <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Season
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Season-one</a>
             </div>
-        </div> -->
+        </div>
 
-        <table id="table" class="table">
-            <thead>
-                <tr>
-                    <th>Team</th>
-                    <th>Games Played</th>
-                    <th>Wins</th>
-                    <th>Ties</th>
-                    <th>Losses</th>
-                    <th>Points</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for='result in sortResult'>
-                    <td><b>{{ result.team }}</b></td>
-                    <td><b>{{ result.games_played }}</b></td>
-                    <td><b>{{ result.win }}</b></td>
-                    <td><b>{{ result.tie }}</b></td>
-                    <td><b>{{ result.loss }}</b></td>
-                    <td><b>{{ result.points }}</b></td>
-                </tr>
-            </tbody>
-        </table>
+        <div id="table">
+            <table id="table" class="table">
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Games Played</th>
+                        <th>Wins</th>
+                        <th>Ties</th>
+                        <th>Losses</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for='result in sortResult'>
+                        <td><b>{{ result.team }}</b></td>
+                        <td><b>{{ result.games_played }}</b></td>
+                        <td><b>{{ result.win }}</b></td>
+                        <td><b>{{ result.tie }}</b></td>
+                        <td><b>{{ result.loss }}</b></td>
+                        <td><b>{{ result.points }}</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <div id="back-and-home-btn">
             <a type="button" id="home" href="index.html" class="btn">Home</a>

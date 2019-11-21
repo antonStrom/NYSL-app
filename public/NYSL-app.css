@@ -23,7 +23,7 @@
     .title {
         display: flex;
         justify-content: center;
-        padding: 4.3%;
+        padding-top: 4%;
         text-shadow: 2px 2px 4px whitesmoke;
     }
 
@@ -173,7 +173,13 @@
     }
 
     .table {
-        height: 70vh;
+        height: 72.5vh;
+        overflow: scroll;
+        text-shadow: 2px 2px 4px whitesmoke;
+    }
+
+    #table {
+        height: 65vh;
         overflow: scroll;
         text-shadow: 2px 2px 4px whitesmoke;
     }
@@ -393,5 +399,28 @@
     #myBtn {
         display: flex;
         justify-content: center;
+        align-content: center;
+    }
+
+    .dropdown {
+        display: flex;
+        justify-content: center;
+        height: auto;
+    }
+
+    #dropdownMenuButton {
+        background-color: #008000;
+        opacity: 0.9;
+    }
+
+    #dropdownMenuButton {
+        text-shadow: none;
+        font-weight: bold;
+        height: auto;
+    }
+
+    .nextgame {
+        display: flex;
+        justify-content: space-evenly;
         align-content: center;
     }

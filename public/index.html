@@ -54,12 +54,36 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
+<!-- CHANGE THIS CODE BY YOURS -->
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCLLfV_7NYpsFXLw_2ioaGm7Y9MOBhBkqs",
+        authDomain: "nysl-app-f9866.firebaseapp.com",
+        databaseURL: "https://nysl-app-f9866.firebaseio.com",
+        projectId: "nysl-app-f9866",
+        storageBucket: "nysl-app-f9866.appspot.com",
+        messagingSenderId: "562959138061",
+        appId: "1:562959138061:web:6e3174bbd03d95e894c444",
+        measurementId: "G-R7NGCDMF6S"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // firebase.analytics();
+</script>
 
 <!-- vue  -->
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="NYSL-app.js"></script>
-
-
-
 
 </html>

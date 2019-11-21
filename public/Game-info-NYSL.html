@@ -57,8 +57,8 @@
         </div>
 
         <div class="nextgame">
-            <button @click="n--, j--" :disabled="n == 0">Previous Game</button>
-            <button @click="n++, j++" :disabled="n == 8">Next Game</button>
+            <button @click="n--, j--, nextGame()" :disabled="n == 0">Previous Game</button>
+            <button @click="n++, j++, nextGame()" :disabled="n == 8">Next Game</button>
         </div>
 
         <div id="back-and-home-btn">

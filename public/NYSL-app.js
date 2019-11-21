@@ -408,16 +408,17 @@ const app = new Vue({
             var updates = {};
             updates[newPostKey] = post;
             this.message = "";
-            setTimeout(this.scrollToEnd, 5);
-            return firebase.database().ref('chat').update(updates);
+            firebase.database().ref('chat').update(updates);
+
         },
 
         getPosts() {
 
             firebase.database().ref('chat').on('value', function (data) {
                 app.messages = data.val(); //messages inside  the database
+                setTimeout(app.scrollToEnd, 50);
             })
-            setTimeout(this.scrollToEnd, 2000);
+
         },
         login() {
 
@@ -439,7 +440,9 @@ const app = new Vue({
         },
         getNextGame() {
             firebase.database().ref('nextgame').on('value', function (data) {
-                app.n = data.val(); //messages inside  the database
+                let obj = data.val()['n']; //messages inside  the database
+                app.n = obj.n;
+                app.j = obj.j;
             })
         },
         nextGame() {
@@ -487,12 +490,12 @@ const app = new Vue({
         saveScores() {
 
             // A post entry 
-            var points1 = app.score["season-one"][0].points;
-            var points2 = app.score["season-one"][1].points;
-            var points3 = app.score["season-one"][2].points;
-            var points4 = app.score["season-one"][3].points;
-            var points5 = app.score["season-one"][4].points;
-            var points6 = app.score["season-one"][5].points;
+            var points1 = app.score[0].points;
+            var points2 = app.score[1].points;
+            var points3 = app.score[2].points;
+            var points4 = app.score[3].points;
+            var points5 = app.score[4].points;
+            var points6 = app.score[5].points;
 
             var post = [{
                     team: "U1",
@@ -566,28 +569,3 @@ const app = new Vue({
         }
     }
 });
-
-
-
-// getNextGame() {
-//     firebase.database().ref('nextgame').on('value', function (data) {
-//         app.n = data.val(); //messages inside  the database
-//     })
-// },
-
-// nextGame() {
-
-//     // A post entry 
-//     var n = this.n;
-//     var j = this.j;
-
-//     var post = {
-//         n: n,
-//         j: j
-//     }
-//     //Write data
-//     var updates = {};
-//     updates["n"] = post;
-//     return firebase.database().ref('nextgame').update(updates);
-// }
-// },
